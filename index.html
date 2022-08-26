@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CoF: Curve of Forgetting</title>
+    <base href="/curve-of-forgetting/">
+
+    <link href="assets/logo32.png" rel="icon" sizes="32x32" type="image/png">
+
+    <meta content="#D9A700" name="theme-color">
+    <link href="manifest.json" rel="manifest">
+
+    <link href="assets/logo32.png" rel="icon" type="image/png">
+    <link rel="manifest" href="manifest.json">
+
+
+    <meta name="description"
+    content="Curve of Forgetting is an app that helps you memorize text by heart. It adds events to your Google Calendar in a special order to memorize text with a minimum number of repetitions.">
+    <meta name="author" content="Pavel Gurov <lucius.gu@gmail.com>">
+    <meta charset="utf-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="assets/skeleton.css?3">
+    <link rel="stylesheet" href="assets/custom.css?3">
+
+</head>
+
+<body>
+<div class="section">
+    <div class="container">
+
+        <header>
+            <a href="https://gurov.github.io/curve-of-forgetting/">
+                <img src="assets/logo72.png" alt="Curve of Forgetting logo">
+            </a>
+            <span class="header-title">
+                <b>Curve of&nbsp;Forgetting</b> helps you memorize text by heart ♥
+            </span>
+            
+        </header>
+        <p>
+            It adds events to <b>your Google Calendar</b> in a special order to memorize text with a minimum number of repetitions.
+            <br>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/Forgetting_curve">Read more</a> about forgetting curve on Wiki.
+        </p>
+        <blockquote id="blockquote">
+            <div><i>I just could not learn the English word "kind". Every time I had to learn its meaning again, so I solved the problem as a programmer - I wrote a program for memorization.</i></div>
+            <div>— Program Author</div>
+        </blockquote>
+        <p>
+                
+        </p>
+
+        <button id="authorize_button" class="w-100" hidden>Authorize</button>
+
+        <div hidden id="loader">
+            <span class="spinner">∫</span>
+            <span>Some async events...</span>
+        </div>
+
+        <div id="events"></div>
+        <pre id="content"></pre>
+
+        <form id="text-form" hidden>
+
+
+            <label for="textToMemorize">Text to memorize</label>
+            <textarea class="u-full-width"
+                      placeholder="Enter text"
+                      id="textToMemorize"></textarea>
+            <label>Remind me in</label>
+            <label>
+                <input type="checkbox" checked id="checkbox1">
+                <span class="label-body">20 minutes</span>
+            </label>
+            <label>
+                <input type="checkbox" checked id="checkbox2">
+                <span class="label-body">1 day</span>
+            </label>
+            <label>
+                <input type="checkbox" checked id="checkbox3">
+                <span class="label-body">2 weeks</span>
+            </label>
+            <label>
+                <input type="checkbox" checked id="checkbox4">
+                <span class="label-body">2 month</span>
+            </label>
+            <label>
+                <input type="checkbox" checked id="checkbox5">
+                <span class="label-body">1 year</span>
+            </label>
+
+            <input class="button-primary"
+                   id="submit-button"
+                   type="button"
+                   value="Submit to Google calendar">
+        </form>
+
+        <hr>
+        <footer>
+            <a target="_blank" href="https://github.com/gurov/curve-of-forgetting">Github source code</a>
+            <button id="signout_button">Sign Out</button>
+        </footer>
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="assets/script.js?3"></script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+</body>
+</html>
